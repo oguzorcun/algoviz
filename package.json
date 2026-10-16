@@ -1,0 +1,17 @@
+{
+  "name": "algoviz",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "python3 test/test_harness.py && node test/model.test.mjs && node test/pyodide_run.mjs && esbuild test/render.test.jsx --bundle --platform=node --format=cjs --jsx=automatic --outfile=test/out/render.cjs --log-level=warning && node test/out/render.cjs"
+  },
+  "dependencies": { "react": "18.3.1", "react-dom": "18.3.1" },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.1",
+    "vite": "5.4.2",
+    "pyodide": "0.26.4"
+  }
+}
